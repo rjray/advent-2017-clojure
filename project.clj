@@ -3,7 +3,7 @@
   :url "https://github.com/rjray/advent-2017-clojure"
   :license {:name "MIT"
             :url "https://opensource.org/license/mit/"}
-  :dependencies [[org.clojure/clojure "1.12.0"]
+  :dependencies [[org.clojure/clojure "1.12.3"]
                  [org.clojure/tools.cli "1.0.219"]
                  [org.clojure/math.numeric-tower "0.0.4"]
                  [org.clojure/math.combinatorics "0.1.6"]
