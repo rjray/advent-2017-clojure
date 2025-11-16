@@ -30,6 +30,8 @@ lein run -b DAY PART
 
 Day 1 (--/--).
 
+Off to a good start: got part 1 wrong the first shot.
+
 ## [day02.clj](day02.clj)
 
 Day 2 (--/--).
