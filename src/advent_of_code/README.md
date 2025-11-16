@@ -34,6 +34,10 @@ Off to a good start: got part 1 wrong the first shot.
 
 ## [day02.clj](day02.clj)
 
+Took advantage of how the combinatorics' library's `combinations` function
+maintains element order. This allowed me to assume the first number in the
+pair was always the smaller, for part 2.
+
 Day 2 (--/--).
 
 ## [day03.clj](day03.clj)
