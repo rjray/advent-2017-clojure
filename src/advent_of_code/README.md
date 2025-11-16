@@ -42,6 +42,16 @@ Day 2 (--/--).
 
 ## [day03.clj](day03.clj)
 
+Part 1 took an inordinate amount of time, finding a usable algorithm for
+calculating the position of an arbitrary number on the spiral. I made a point
+of not iterating _n_ times to get the coordinates, because I was certain that
+there was a mathematical way to do it. Plus, I worried that it wouldn't help
+part 2.
+
+Part 2 was much simpler, by comparison. The `spiral` function written for part
+1 was helpful, but an iterative mapping would have also worked in this case.
+Still, part 2 went much more quickly.
+
 Day 3 (--/--).
 
 ## [day04.clj](day04.clj)
