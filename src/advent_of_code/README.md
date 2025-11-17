@@ -34,13 +34,15 @@ Off to a good start: got part 1 wrong the first shot.
 
 ## [day02.clj](day02.clj)
 
+Day 2 (--/--).
+
 Took advantage of how the combinatorics' library's `combinations` function
 maintains element order. This allowed me to assume the first number in the
 pair was always the smaller, for part 2.
 
-Day 2 (--/--).
-
 ## [day03.clj](day03.clj)
+
+Day 3 (--/--).
 
 Part 1 took an inordinate amount of time, finding a usable algorithm for
 calculating the position of an arbitrary number on the spiral. I made a point
@@ -52,11 +54,19 @@ Part 2 was much simpler, by comparison. The `spiral` function written for part
 1 was helpful, but an iterative mapping would have also worked in this case.
 Still, part 2 went much more quickly.
 
-Day 3 (--/--).
-
 ## [day04.clj](day04.clj)
 
 Day 4 (--/--).
+
+This was a pretty simple day. Part 1 was just identifying phrases with at
+least one duplicate word. This was done with a running set instance and a
+`loop` construct over the words in the phrase.
+
+Part 2 added an addition constraint, that no two words could be anagrams of
+each other. Anagrams had to use all letters in both words. This was done by
+turning each word in the phrase into a `map` by use of `group-by` (with
+`identity` as the grouping predicate). This produced structures that could be
+definitively compared for equality.
 
 ## [day05.clj](day05.clj)
 
