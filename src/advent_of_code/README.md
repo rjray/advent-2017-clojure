@@ -72,6 +72,15 @@ definitively compared for equality.
 
 Day 5 (--/--).
 
+Another fairly simple day; part 1 was just a matter of walking the "program"
+and applying the jumps.
+
+Part 2 upped things by changing the way the instructions in the "program"
+updated each step. As I had used `update` on the vector of jump-values for
+part 1, I just had to make the function I'd written take an updater as a
+parameter, change part 1 to pass `inc` as this parameter, then write a
+different one for part 2.
+
 ## [day06.clj](day06.clj)
 
 Day 6 (--/--).
