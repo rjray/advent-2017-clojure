@@ -85,6 +85,14 @@ different one for part 2.
 
 Day 6 (--/--).
 
+Part 1 was a familiar pattern: transform a data structure repeatedly until you
+detect a loop. Nothing new here (given previous years done).
+
+Part 2 was a little different twist than usual: when the loop is detected, find
+the size of the cycle by returning the distance between the first and second
+occurrences of the structure. Not hard for Clojure, just added a `map` that used
+the structure as a key and the first-seen step as the value.
+
 ## [day07.clj](day07.clj)
 
 Day 7 (--/--).
