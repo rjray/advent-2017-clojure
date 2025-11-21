@@ -93,6 +93,9 @@ the size of the cycle by returning the distance between the first and second
 occurrences of the structure. Not hard for Clojure, just added a `map` that used
 the structure as a key and the first-seen step as the value.
 
+I probably could have re-coded the initial `find-loop-count` fn to solve both
+halves of the problem, but it wasn't a priority.
+
 ## [day07.clj](day07.clj)
 
 Day 7 (--/--).
