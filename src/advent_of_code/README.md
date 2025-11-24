@@ -100,6 +100,55 @@ halves of the problem, but it wasn't a priority.
 
 Day 7 (--/--).
 
+Breaking my rules a little bit on this one, because part 2 nearly drove me mad.
+This time, I've re-factored the code completely after solving part 2, such that
+part 1 now uses code from part 2 instead of the initially solution to part 1.
+
+Part 1 was straightforward: find the node in the input that has no parent, and
+that will be your root node. The initial version of this worked fine, but the
+structure that was built from the data to solve part 1 was essentially useless
+in solving part 2. And the structure I came up with for part 2 made finding the
+root-node much easier and more succinct.
+
+But part 2 took many hours spread over about 3 days. (To be fair to myself, I'm
+not laser-focused on this year like I am in the live events so I would only
+work on it in little bits of time.) I started out trying to do it as a
+depth-first search using an iterative algorithm. I couldn't get that to
+actually run to completion, so I got frustrated and looked at some past
+solutions from the reddit thread on 2017 day 7. I found a pretty tight Python
+solution that was also using DFS, so I looked to see what I was doing
+differently. The main difference seemed to be that the Python was using
+recursion and printing *all* cases where a node was adjusted, including those
+higher in the tree that don't actually change (because the lowest instance
+solves the tree overall). Generally, I liked the approach. But I (stubbornly)
+told myself I could still do it iteratively with a stack, and *my* version
+would be able to terminate and return the answer when first found, rather than
+traversing the entire tree.
+
+I was wrong, and I got my first two answers to part 2 wrong.
+
+After hours of debugging and comparing my output to that of the Python code, I
+realized that (for some reason) my code was *never looking at the key set of
+nodes*, at least not all together. I could not figure out why, and I never did.
+Out of frustration, I simply re-tooled my solving function to be recursive and
+to print each number as it was calculated, taking it on faith that (like the
+Python solution) the first number displayed would be the correct value. It was,
+and I got the star for part 2 and went to bed.
+
+But it felt **wrong**. The function was not returning the answer in this case,
+it was returning the total weight at the root, a value that was then ignored.
+So I looked at it some more this morning, and the only way I could think of
+that would carry things over the series of recursive calls was to use an
+[atom](https://clojuredocs.org/clojure.core/atom). I slightly re-factored the
+recursive function to take an atom as a second argument and in cases where an
+adjustments was found it would `conj` the adjusted value onto the list that the
+atom held. Then, at the end of the solving process, instead of returning the
+total-weight value of the root it returned the first value placed into the atom
+(via `(last @values)`).
+
+It still feels wrong. I still feel like there's a way to do this with a stack
+and an iterative algorithm. But I can't spend more time on it right now.
+
 ## [day08.clj](day08.clj)
 
 Day 8 (--/--).
