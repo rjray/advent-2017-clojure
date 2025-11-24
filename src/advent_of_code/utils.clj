@@ -46,6 +46,16 @@
        (map #(str/replace % "-" " "))
        (map parse-out-longs)))
 
+(defn tokenize
+  "Essentially split `line` on white-space, returning a list of tokens"
+  [line]
+  (str/split line #"\s+"))
+
+(defn alphanum-tokenize
+  "Extract all alpha-numeric tokens from `line`, ignoring everything else"
+  [line]
+  (re-seq #"\w+" line))
+
 (defn manhattan
   "Calculate the Manhattan Distance between two points."
   [[^long y1 ^long x1] [^long y2 ^long x2]]
