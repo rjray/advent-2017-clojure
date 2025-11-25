@@ -153,6 +153,17 @@ and an iterative algorithm. But I can't spend more time on it right now.
 
 Day 8 (--/--).
 
+Another machine-simulation pair of problems. In this case, the "code" was made
+up of lines of register operations, each gated on an `if` statement.
+
+Part 1 was to just run all the lines and determine the highest value of all the
+registers at the end. Writing the "runner" was pretty easy given that I've done
+similar problems in previous years.
+
+Part 2 wanted to know the highest value any register reached throughout the full
+run. That only took a little tweaking to the original run-code, though I chose
+to just replicate it out of expediency.
+
 ## [day09.clj](day09.clj)
 
 Day 9 (--/--).
