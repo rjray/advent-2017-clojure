@@ -168,6 +168,23 @@ to just replicate it out of expediency.
 
 Day 9 (--/--).
 
+A parsing problem, generally. Part 1 was to count the number of groups at each
+level (depth) and compute a score based on the counts multiplied by the
+associated depths. For this, I wrote a small character-driven state-machine that
+tracked the machine's state through an integer `depth` and two Boolean values:
+`skip` which indicated that we just saw a `!` and the current character should
+be skipped, and `garbage` which indicated that the stream was currently in a
+"garbage" sequence.
+
+In part 2, the task was to count the number of characters skipped within the
+garbage sequences. The leading and trailing `<` and `>` didn't count, nor did
+the `!` that cancels a character or the character that gets canceled. Note that
+this _does_ mean that extraneous `<` characters should be counted. Because of
+the state-machine nature of the part 1 solution, I only had to add an additional
+value to the tracking state (`gc`, for "garbage count") and move one of the
+rules one step sooner than it had been for part 1 (to ensure that the extra `<`
+got counted).
+
 ## [day10.clj](day10.clj)
 
 Day 10 (--/--).
