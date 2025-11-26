@@ -241,6 +241,26 @@ difference in the outcome, so I'll have to study it a bit more.
 
 Day 13 (--/--).
 
+This was actually a pretty easy day as well, save for me misunderstanding a key
+part of the the part 2 conditions.
+
+Part 1 is just to see what the impact would be for running through the firewall
+immediately. With some simple modulo math and such, it was an easy function to
+write and test.
+
+For part 2, the goal was to find a time-delay that would prevent you from being
+"caught" by any of the scanners. I mis-read this as being the same as having a
+score of zero (based on the scoring metric of part 1). So I had a lot of time
+lost trying to understand why my result for the test value was so much smaller
+than the correct value. The actual requirement was to pass through the firewall
+with *no* scanner hits. So, if the first (level 0) scanner hits, that counts
+against the goal even though the "severity" from it is zero. Once I accounted
+for that, I got the correct answer via brute-force in just under 80 seconds.
+
+I'll probably revisit part 2, since I feel that there's a better way to get the
+answer. I'm reminded of a previous year's puzzle that relied on the Chinese
+Remainder Theorem, but I don't want to get into that right now.
+
 ## [day14.clj](day14.clj)
 
 Day 14 (--/--).
