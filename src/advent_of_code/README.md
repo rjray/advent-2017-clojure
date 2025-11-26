@@ -189,6 +189,22 @@ got counted).
 
 Day 10 (--/--).
 
+Got my *third* wrong answer on part 2, simply because I forgot to trim the
+newline character from the input string before feeding it to the puzzle code.
+
+Took a little while to get the mechanics right for part 1, to apply the hashing
+algorithm itself on a vector of the numbers. Once I got it, I had a bug that I
+*almost* didn't catch because the test data yielded the correct answer. On a
+hunch, I ran it again while dumping the vector at each step and saw that the
+intermediate steps were wrong. Had I run with this, I would have gotten part 1
+wrong on the first try, as well.
+
+Part 2 was just to run the hashing multiple times cumulatively, while treating
+the input as a series of ASCII bytes instead of integers. This was where I made
+my third error, as I forgot to take the newline off of the string first. Thus,
+my input sequence had an additional number (13) at the end. The rest of part 2
+was pretty simple.
+
 ## [day11.clj](day11.clj)
 
 Day 11 (--/--).
