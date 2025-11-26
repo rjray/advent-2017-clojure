@@ -275,6 +275,24 @@ hair over 9 seconds, an almost 89% increase in speed.
 
 Day 14 (--/--).
 
+The basis of this day's puzzles was a 128x128 representation of disk blocks in
+use. The determination of each point was based on the "knot hash" algorithm of
+day 10. One hash string would expand into a 128-bit binary number.
+
+For part 1 the goal was just to count all the used blocks. The majority of the
+running time was spent on calculating the 128 hashes. Counting the 1's from
+there was basic.
+
+Part 2 was a clever take on a search problem. The task was to find and count
+all the "regions" on the disk, where a region is a group of contiguous blocks
+based on up/down/left/right adjacency. Rather than "search" the whole 128x128
+field, a `for` comprehension was used to create a set of the coordinate pairs
+of the used blocks. With the set, a `loop` was executed that would take the
+next point from the set and find all set-members that were in the region. Once
+the region was identified, a counter was incremented and the members of the
+region were removed from the main set. When the set was empty, the count of
+regions was the answer.
+
 ## [day15.clj](day15.clj)
 
 Day 15 (--/--).
