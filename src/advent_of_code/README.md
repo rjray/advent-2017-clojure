@@ -226,6 +226,17 @@ calculation).
 
 Day 12 (--/--).
 
+This should not have gone as it did. Part 1 was easily answered, part 2 took
+three tries.
+
+The problem was basically identification of disjoint graphs. In part 1, the
+task was to find the size of the graph that contained the 0 node. In part 2,
+the task was to count the total number of disjoint graphs. There was a subtle
+bug in my part 1 code that did not affect part 1, but broke part 2. Basically,
+the `seen` set was being initialized to the starting node, but should have been
+initialized as an empty set. I don't really understand why that made the
+difference in the outcome, so I'll have to study it a bit more.
+
 ## [day13.clj](day13.clj)
 
 Day 13 (--/--).
