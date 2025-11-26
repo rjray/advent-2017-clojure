@@ -209,6 +209,19 @@ was pretty simple.
 
 Day 11 (--/--).
 
+This day was another graph-distance type problem, with the twist being that the
+field was a hex-grid instead of a typical square-grid.
+
+Part 1 was just to find the distance of the final point reached. I used a
+coordinate representation and distance calculation from the
+[Red Blob Games](https://www.redblobgames.com/grids/hexagons/) website. Simple,
+took longer to read it than it took to code it.
+
+Part 2 asked for the furthest distance from the origin the walker got during
+the walk. At this point, I knew that everything was relative to a (0, 0, 0)
+origin, so I simplified a few things over part 1 (like the distance
+calculation).
+
 ## [day12.clj](day12.clj)
 
 Day 12 (--/--).
