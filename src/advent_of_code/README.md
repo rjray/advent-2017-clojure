@@ -261,6 +261,16 @@ I'll probably revisit part 2, since I feel that there's a better way to get the
 answer. I'm reminded of a previous year's puzzle that relied on the Chinese
 Remainder Theorem, but I don't want to get into that right now.
 
+## [day13.clj](day13.clj)
+
+As usual, I couldn't really wait to try something that would hopefully be
+faster.
+
+I rewrote part 2 to use `not-any?` to see if a given time-offset produced *any*
+hits at given scanner. I then passed the testing function to `filter` and used
+`first` to get the first off the resulting iterator. The run time was just a
+hair over 9 seconds, an almost 89% increase in speed.
+
 ## [day14.clj](day14.clj)
 
 Day 14 (--/--).
