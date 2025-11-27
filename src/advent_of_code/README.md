@@ -297,6 +297,37 @@ regions was the answer.
 
 Day 15 (--/--).
 
+This was a fairly unique puzzle, and a very educational one (in a good way).
+
+For this puzzle, I had to learn how to create my own lazy-sequences of values
+from a function. To be fair, I'm not even sure I did it in the "best" way, but
+it worked the first time and (given the number of values generated) was pretty
+performant.
+
+The puzzle calls for simulating two generators that produce numerical values in
+the 1-2147483647 range. The goal of part 1 is to look at the first 40,000,000
+pairs of numbers to see how many of the pairs are identical in the bottom 16
+bits. The generators are created as a pair of lazy sequences using an
+intermediary function that holds the "factor" value that is unique to each
+generator. The resulting two sequences were fed to `map` to produce a sequence
+of pairs that were tested. Part 1 took about 33.19 seconds to run.
+
+In part 2, you are to "refine" the two generators so that generator A only
+gives back those numbers from its sequence that are multiples of 4, and
+generator B only gives back those that are multiples of 8. Rather than add
+these factors directly into the generator functions themselves, I took
+advantage of the fact that they were already lazy sequences. Each generator was
+wrapped in a call to `filter` with a corresponding predicate. This produced a
+secondary lazy-seq for each of the two. These were passed to the same "judge"
+function that did the map->pair->comparison pipeline. For part 2, you only had
+to compare 5,000,000 such pairs, since the number of underlying numbers being
+produced would be so much higher. This was a case of part 2 taking significantly
+less time than part 1, as it was only about 5 minutes to write and test the
+wrapping filter code. Part 2 took about 22.62 seconds to run. Just for fun, I
+ran it a second time with 40,000,000 pairs just to see how much longer it would
+take: 180.17 seconds, which tracks pretty close with the original run-time for
+5,000,000 pairs.
+
 ## [day16.clj](day16.clj)
 
 Day 16 (--/--).
