@@ -332,6 +332,29 @@ take: 180.17 seconds, which tracks pretty close with the original run-time for
 
 Day 16 (--/--).
 
+One key area of growth for me, is how quickly I recognize certain "types" of
+puzzles. Part 1 of today was simple-enough, but part 2 *could* have been a lot
+harder had I not faced similar problems in past years.
+
+Part 1 has you take a string of 16 "dancers" in a line, and permute them in
+various ways based on the input. There were three different "dance moves", and
+converting them to operations on a vector was pretty easy. The requested answer
+was a string of the 16 (represented by letters "a" through "p") in the final
+order.
+
+Part 2, however, was to return the ordering of the 16 after running the series
+of dance moves 1,000,000,000 times. While part 1 finished in about 0.1 seconds,
+it's obvious that a billion permutations would take far too long. For problems
+like this, the basis of the solution is to save the configuration after each
+permutation and note when you see a result for the second time. Get the length
+of the cycle by comparing to the number of the permutation to the number when
+it was first seen, then you can use modulo arithmetic to compute which of the
+permutations in the cycle would fall on 1,000,000,000.
+
+This recognition meant solving part 2 in about the same amount of time as part
+1 was solved. Only a single bug (reversed arguments to a function) kept it from
+working initially, but once fixed the correct answer came out the first time.
+
 ## [day17.clj](day17.clj)
 
 Day 17 (--/--).
