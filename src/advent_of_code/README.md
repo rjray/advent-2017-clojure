@@ -332,9 +332,9 @@ take: 180.17 seconds, which tracks pretty close with the original run-time for
 
 Day 16 (--/--).
 
-One key area of growth for me, is how quickly I recognize certain "types" of
-puzzles. Part 1 of today was simple-enough, but part 2 *could* have been a lot
-harder had I not faced similar problems in past years.
+One key area of growth for me, is how quickly I now recognize certain "types"
+of puzzles. Part 1 of today was simple-enough, but part 2 *could* have been a
+lot harder had I not faced similar problems in past years.
 
 Part 1 has you take a string of 16 "dancers" in a line, and permute them in
 various ways based on the input. There were three different "dance moves", and
@@ -358,6 +358,23 @@ working initially, but once fixed the correct answer came out the first time.
 ## [day17.clj](day17.clj)
 
 Day 17 (--/--).
+
+In a way, this was another "solve for N iterations, now solve for an ungodly
+number of iterations" puzzle.
+
+Part 1 was to insert the numbers 1-2,017 into a list according to given rules
+and a "cycle" number. It went pretty quickly and the answer took about 2.4
+seconds.
+
+Part 2 was to insert numbers up to 50,000,000 and then return the number that
+was immediately after the 0 in the resulting list. Besides the amount of time
+it would have taken to run the original algorithm up to that number, the memory
+use would probably also have been an issue. After some thought, it occurred to
+me that I actually only had to keep track of which numbers were slated to be
+inserted at position 1. The number 0 starts at position 0, and no new numbers
+ever go into that slot. The lowest insertion point is 1, and since only indices
+higher than 1 get shifted by an insertion I wouldn't have to track that. The
+answer took about 10.5 seconds to produce.
 
 ## [day18.clj](day18.clj)
 
