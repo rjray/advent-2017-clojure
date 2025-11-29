@@ -380,6 +380,20 @@ answer took about 10.5 seconds to produce.
 
 Day 18 (--/--).
 
+Another machine-code-simulation pair. Part 1 went pretty quickly and got the
+answer right on the first try. The techniques are well-established at this
+point.
+
+Part 2 *should* have been about as easy. It changes the definition of two of
+the opcodes from part 1 and introduces async parallelism. The first run ran
+long-enough to be clear that it was stuck in a loop. It took way too long to
+figure out that one of the "instructions" in the input was using a number
+literal for the first parameter to the opcode, and I had interpreted the
+description to mean that the first argument was always a register. Once I
+realized this, it was fixed. The fix was tricky, because there was more than
+one place where I presumed an opcode's first parameter was going to be a
+register.
+
 ## [day19.clj](day19.clj)
 
 Day 19 (--/--).
