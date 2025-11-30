@@ -398,6 +398,13 @@ register.
 
 Day 19 (--/--).
 
+This puzzle was of the type where you traverse a maze/field. For part 1, the
+goal was to track in what order you encountered the letters in the field and
+return them in order.
+
+For part 2, you were just supposed to count the steps. Because of how I had
+done part 1, this was trivial.
+
 ## [day20.clj](day20.clj)
 
 Day 20 (--/--).
