@@ -409,6 +409,30 @@ done part 1, this was trivial.
 
 Day 20 (--/--).
 
+Got another wrong answer on part 1 of this.
+
+The puzzle is: you are given a list of 1,000 particles. Each line gives you
+the (starting) position, velocity, and acceleration vectors. In part 1, you are
+to move the particles in 3D space until it becomes clear which particle will
+always be the closest to the origin. My first answer was high, because my
+approach needed to run a little longer than I initially did. My method was to
+move the particles one tick then record the closest-to-origin index. I would
+run this until the same index showed up in 100 consecutive steps. But that was
+not enough. I got the answer wrong, so I bumped it up to 500 consecutive steps.
+That gave the right answer, but there was probably a more mathematical approach
+that wouldn't require so many calculations.
+
+In part 2, you are told to remove any particles that collide after a time-step.
+The requested answer is how many particles remain once there are no more
+possible collisions. I started out thinking that I could do this with a system
+of linear equations, but quickly (as in, before I wrote any code!) remembered
+that the paths aren't linear (due to the acceleration). Poking around via
+Google gave me an equation for calculating the position *P<sub>t</sub>* for any
+*t* without having to do it step-wise for each particle. But again, I was
+vexed by the question of how long I needed to see no further collisions before
+I could safely assume the system was stable. Still, part 2 ran faster than part
+1 had, and I got the correct answer on the first try.
+
 ## [day21.clj](day21.clj)
 
 Day 21 (--/--).
