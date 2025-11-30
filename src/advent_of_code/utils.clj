@@ -63,6 +63,11 @@
   [[^long y1 ^long x1] [^long y2 ^long x2]]
   (+ (abs (- y1 y2)) (abs (- x1 x2))))
 
+(defn manhattan3
+  "Calculate the Manhattan Distance between two points."
+  [[^long z1 ^long y1 ^long x1] [^long z2 ^long y2 ^long x2]]
+  (+ (abs (- z2 z1)) (abs (- y1 y2)) (abs (- x1 x2))))
+
 (defn first-duplicate
   "Find first element of collection that is a duplicate"
   [coll]
