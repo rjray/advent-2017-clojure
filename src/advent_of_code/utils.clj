@@ -28,11 +28,13 @@
   (str/split-lines input))
 
 (defn to-matrix
-  "Turn a blob (or block) into a vector of vectors"
-  [input]
-  (->> input
-       to-lines
-       (mapv vec)))
+  "Turn a blob (or block) into a vector of vectors, possibly substituting vals"
+  [input & [subst]]
+  (let [lines (to-lines input)]
+    (if subst
+      (let [with-subs (fn [line] (mapv #(get subst % %) line))]
+        (mapv with-subs lines))
+      (mapv vec lines))))
 
 (defn parse-out-longs
   "Parse out all numbers in `line` that are integers (longs)"
