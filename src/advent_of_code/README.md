@@ -451,6 +451,22 @@ seconds.
 
 Day 22 (--/--).
 
+This day's puzzles were based on infinite grids. The simulation was that of a
+virus infecting nodes in a compute grid.
+
+Part 1 was simple, just move around the grid according to the given rules and
+toggle the infected/clean state. For the answer, you were to report the number
+of grid points that were explicitly toggled to infected (not counting any that
+started out that way).
+
+Part 2 introduced two new states for the grid points, and had you run the
+simulation for 10,000,000 iterations (rather than the previous 10,000). In
+this case, the technique used to represent the data and handle the move/turn
+steps was easily extended to cover 4 states instead of 2.
+
+This does show a need for some generalization of the grid/directions/movement
+code into `utils.clj`.
+
 ## [day23.clj](day23.clj)
 
 Day 23 (--/--).
