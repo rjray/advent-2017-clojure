@@ -437,6 +437,16 @@ I could safely assume the system was stable. Still, part 2 ran faster than part
 
 Day 21 (--/--).
 
+Boy, did part 1 take longer than it should have. Besides struggling with
+finding a correct algorithm, I didn't read the description quite well-enough.
+So when I couldn't solve part 1, I spent an hour or more trying to debug why.
+I finally searched for every rotation of the starting pattern in my puzzle data
+only to not find it. It was then that I caught the bit about *flipping* the
+patterns as well.
+
+On the plus side, my code was able to brute-force part 2 in just over 37
+seconds.
+
 ## [day22.clj](day22.clj)
 
 Day 22 (--/--).

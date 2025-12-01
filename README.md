@@ -14,7 +14,7 @@ comment code after the fact, when I'm not racing the clock.
 
 ## Stats
 
-Number of answers correct on first submission: 35/40 (87.50%)
+Number of answers correct on first submission: 37/42 (88.10%)
 
 Highest finish for first half: N/A
 
