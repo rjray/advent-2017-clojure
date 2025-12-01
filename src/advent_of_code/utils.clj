@@ -133,8 +133,15 @@
       :else             (recur x ps factors))))
 
 ;; https://stackoverflow.com/questions/10347315/matrix-transposition-in-clojure
-(defn transpose [m]
+(defn transpose
+  "Transpose the given matrix `m` on the diagonal"
+  [m]
   (apply mapv vector m))
+
+(defn rotate-cw
+  "Rotate the given matrix `m` one turn clockwise"
+  [m]
+  (mapv #(vec (reverse %)) (transpose m)))
 
 ;; Taken from https://github.com/narimiran/AdventOfCode2023/blob/main/clojure/aoc.clj
 (defn gcd
