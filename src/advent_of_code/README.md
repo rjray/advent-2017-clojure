@@ -471,6 +471,21 @@ code into `utils.clj`.
 
 Day 23 (--/--).
 
+Another assembly-simulation puzzle. Part 1 just wanted to count how many `mul`
+instructions were executed. Part 2, however, calls for changing one register
+from 0 to 1 at the start before running the program and reading the value of
+a different register at the end. Needless to say, actually running the code
+would have taken far far too long. Some reading of reddit threads and
+examination showed that the code was looping between two values by a step-size
+of 17 and counting all non-prime numbers in that range. Most answers on reddit
+did a simple loop and focused on as optimal of a prime-tester as they could
+manage. Since my `utils.clj` module has a primes lazy-sequence generator, I
+took the opposite approach: I found all primes between the two boundary numbers
+and converted them to a `set` structure. I then looped over the range and
+counted numbers that were *not* in the set. Thus, primality wasn't really
+tested since the generator function produces the primes without testing every
+number in the range.
+
 ## [day24.clj](day24.clj)
 
 Day 24 (--/--).
