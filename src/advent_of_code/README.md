@@ -490,6 +490,16 @@ number in the range.
 
 Day 24 (--/--).
 
+This puzzle was based on building sequences of "compoents" to create a bridge
+over a gap. Laying out sequences was based on the "connector" values on each
+end of a given component.
+
+For both parts I did an interative BFS algorithm using the
+`clojure.lang.PersistentQueue` class. I recorded the "strength" of each valid
+combination (and for part 2, the length of the bridge as well). It worked for
+both parts, with correct answers on the first try for each. But it wasn't very
+speedy-- each run took between 4:50 and 5:00 minutes to run.
+
 ## [day25.clj](day25.clj)
 
 Day 25 (--/--).
