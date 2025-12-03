@@ -503,3 +503,11 @@ speedy-- each run took between 4:50 and 5:00 minutes to run.
 ## [day25.clj](day25.clj)
 
 Day 25 (--/--).
+
+This day involved writing a simple Turing Machine simulator and running it an
+inordinate number of steps. I *could* have finished this a lot faster if I had
+just hard-coded the machine based on reading the input. But instead I chose to
+have it actually parse out the parameters of the machine from the text.
+
+Other than that, it wasn't that much different from any other virtual
+machine-like puzzle.
